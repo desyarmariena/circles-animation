@@ -9,9 +9,15 @@
     <title>Circles Animation</title>
     <link rel="stylesheet" type="text/css" href="css/circles.css">
     <script type="text/javascript" src="js/paper-full.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.9/howler.js"></script>
     <script type="text/paperscript" canvas="myCanvas">
+        var sound = new Howl({
+            src: ['sounds/bubbles.mp3']
+        });
+        
         var circles = [];
-        function onKeyDown(event) {         
+        function onKeyDown(event) {   
+            sound.play();      
             var point = new Point(view.size.width, view.size.height) * Point.random();                        
             var newCircle = new Path.Circle(new Point(point),500);
             newCircle.fillColor = "yellow";
