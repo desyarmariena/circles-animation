@@ -7,8 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
     <title>Circles Animation</title>
-
+    <link rel="stylesheet" type="text/css" href="css/circles.css">
     <script type="text/javascript" src="js/paper-full.js"></script>
+    <script type="text/paperscript" canvas="myCanvas">
+        
+        function onKeyDown(event) {         
+            var point = new Point(view.size.width, view.size.height) * Point.random();            
+            new Path.Circle(new Point(point), 10).fillColor = 'yellow';        
+        }           
+        
+    </script>
 </head>
 
 <body>
